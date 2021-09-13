@@ -99,6 +99,8 @@ uniqueAllAppliances = [...new Set(allAppliances)]
 uniqueAllAppliances.sort()
 // console.table(uniqueAllAppliances)
 
+const tagBarSelection = document.getElementById("tag-bar");
+
 /*------Filtre ingredients------*/
 
 const openIngredientFilter = document.getElementById("ingredient-icon-down");
@@ -108,19 +110,30 @@ const displayIngredientBox = document.getElementById("box-ingredient");
 // Ouverture du listing Ingredients
 openIngredientFilter.addEventListener("click",listOfIngredients);
 
-
 uniqueAllIngredients.forEach((Ingredient) => {
     listingIngredients.innerHTML += `<div class="toto">${Ingredient}</div>`
 })
-const newIngredientSelect = document.getElementsByClassName("toto");
 function listOfIngredients() {
     displayIngredientBox.classList.add("box-modified-ingredient");
     listingIngredients.classList.remove("hidden");
     openIngredientFilter.classList.add("hidden");
     closeIngredientFilter.classList.remove("hidden");
-    newIngredientSelect.addEventListener("click",selectIngredient)
+    listingIngredients.addEventListener("click", tagIngredient); 
 }
 
+//Fonction du Tag Ingredient//
+
+function tagIngredient(){
+    let newDivSelect = document.createElement("div");
+    tagBarSelection.appendChild(newDivSelect);
+    newDivSelect.classList.add("tagbox-ingredient");
+    newDivSelect.innerHTML += '<div class="text">Bol</div> <div id="tag-icon"><i class="far fa-times-circle"></i></div>'
+    let closeTagIngredient = document.getElementById("tag-icon");
+    closeTagIngredient.addEventListener("click",closeSelectedIngredientTag);
+    function closeSelectedIngredientTag(){
+        newDivSelect.remove();
+    }
+}
 // Fermeture du listing Ingredients
 closeIngredientFilter.addEventListener("click", closeListOfIngredients);
 function closeListOfIngredients() {
@@ -136,19 +149,34 @@ const openAppareilFilter = document.getElementById("appareil-icon-down");
 const closeAppareilFilter = document.getElementById("appareil-icon-up");
 const listingAppareils = document.getElementById("list-appareil");
 const displayAppareilBox = document.getElementById("box-appareil");
+
 // Ouverture du listing Appareils
+uniqueAllAppliances.forEach((Appliance) => {
+    listingAppareils.innerHTML += `<div class="toto">${Appliance}</div>`
+})
 openAppareilFilter.addEventListener("click",listOfAppareils);
 function listOfAppareils() {
     displayAppareilBox.classList.add("box-modified-appareil");
     listingAppareils.classList.remove("hidden");
     openAppareilFilter.classList.add("hidden");
     closeAppareilFilter.classList.remove("hidden");
-
+    listingAppareils.addEventListener("click", tagAppliance);   
 }
-uniqueAllAppliances.forEach((Appliance) => {
-    listingAppareils.innerHTML += `<div class="toto">${Appliance}</div>`
-})
-// Ouverture du listing Appareils
+//Fonction du Tag Appareil//
+
+function tagAppliance(){
+    let newDivSelect = document.createElement("div");
+    tagBarSelection.appendChild(newDivSelect);
+    newDivSelect.classList.add("tagbox-appliance");
+    newDivSelect.innerHTML += '<div class="text">Bol</div> <div id="tag-icon"><i class="far fa-times-circle"></i></div>'
+    let closeTagAppliance = document.getElementById("tag-icon");
+    closeTagAppliance.addEventListener("click",closeSelectedApplianceTag);
+    function closeSelectedApplianceTag(){
+        newDivSelect.remove();
+    }
+}
+// Fermeture du listing Appareils
+
 closeAppareilFilter.addEventListener("click", closeListOfAppareils);
 function closeListOfAppareils() {
     displayAppareilBox.classList.remove("box-modified-appareil");
@@ -163,7 +191,6 @@ const openUstensileFilter = document.getElementById("ustensile-icon-down");
 const closeUstensileFilter = document.getElementById("ustensile-icon-up");
 const listingUstensiles = document.getElementById("list-ustensile");
 const displayUstensileBox = document.getElementById("box-ustensile");
-const tagBartoto = document.getElementById("tag-bar");
 
 // Ouverture du listing Ustensiles
 openUstensileFilter.addEventListener("click",listOfUstensiles);
@@ -175,15 +202,20 @@ function listOfUstensiles() {
     listingUstensiles.classList.remove("hidden");
     openUstensileFilter.classList.add("hidden");
     closeUstensileFilter.classList.remove("hidden");
-    listingUstensiles.addEventListener("click", tagUstensil);
-    
+    listingUstensiles.addEventListener("click", tagUstensil);    
 }
+//Fonction du Tag Ustensile//
+
 function tagUstensil(){
-    console.log("oui")
     let newDivSelect = document.createElement("div");
-    tagBartoto.appendChild(newDivSelect);
+    tagBarSelection.appendChild(newDivSelect);
     newDivSelect.classList.add("tagbox-ustensils");
-    newDivSelect.innerHTML += '<div class="text">$Ustensil.name</div>','<div class="icon">'
+    newDivSelect.innerHTML += '<div class="text">Bol</div> <div id="tag-icon"><i class="far fa-times-circle"></i></div>'
+    let closeTagUstensile = document.getElementById("tag-icon");
+    closeTagUstensile.addEventListener("click",closeSelectedUstensileTag);
+    function closeSelectedUstensileTag(){
+        newDivSelect.remove();
+    }
 }
 // Fermeture du listing Ustensiles
 closeUstensileFilter.addEventListener("click", closeListOfUstensiles);
