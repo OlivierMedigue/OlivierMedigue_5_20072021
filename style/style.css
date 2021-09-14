@@ -61,7 +61,7 @@ header img{
     align-items: center;
     justify-content: space-between;
     background-color: #3282F7;
-    
+
 }
 .tagbox-appliance{
     width: 107px;
@@ -115,6 +115,9 @@ header img{
 .hidden{
     visibility: hidden;
 }
+.selected-elt{
+    text-decoration: line-through;
+}
 .Filter {
     display: flex;
     justify-content: space-between;
@@ -149,7 +152,7 @@ header img{
     border-radius: 0 0 5px 5px;
     overflow-y: scroll;  
 }
-.toto{
+.listing-element{
     margin: 5px 0 5px 15px;
 }
 .appareil{
