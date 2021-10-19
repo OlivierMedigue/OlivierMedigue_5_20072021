@@ -27,7 +27,6 @@
         </div>
         <div id="tag-bar"></div>
         <div class="filters-area">
-            <div class="selected-items"></div>
             <div class="listing-areas">
                 <div class="Filter ingredient" id="box-ingredient">
                     <input class="filter-search" id="ingredient" name="Ingredient" placeholder="Ingredient">
@@ -35,11 +34,11 @@
                     <span id="ingredient-icon-up" class="hidden"><i class="fas fa-chevron-up"></i></span>
                     <div id="list-ingredient" class="hidden"></div>
                 </div>
-                <div class="Filter appareil" id="box-appareil">
-                    <input class="filter-search" id="appareil" name="Appareil" placeholder="Appareil">
-                    <span id="appareil-icon-down"><i class="fas fa-chevron-down"></i></span>
-                    <span id="appareil-icon-up" class="hidden"><i class="fas fa-chevron-up"></i></span>
-                    <span id="list-appareil" class="hidden"></span>
+                <div class="Filter appliance" id="box-appliance">
+                    <input class="filter-search" id="appliance" name="Appareil" placeholder="Appareil">
+                    <span id="appliance-icon-down"><i class="fas fa-chevron-down"></i></span>
+                    <span id="appliance-icon-up" class="hidden"><i class="fas fa-chevron-up"></i></span>
+                    <span id="list-appliance" class="hidden"></span>
                 </div>
                 <div class="Filter ustensiles" id="box-ustensile">
                     <input class="filter-search" id="ustensiles" name="Ustensiles" placeholder="Ustensiles">
@@ -51,38 +50,43 @@
         </div>
     </section>
     <section class="recipes">
-        <div class="recipe-box">
-            <div class="recipe-img"></div>
-            <div class="recipe-content">
-                <div class="recipe-title">
-                    <h2>Limonade de coco</h2>
-                    <div class="timer">
-                        <span class="timer-icon"><i class="far fa-clock"></i></span>
-                        <p>10min</p>
+        <div class="recipe-container">
+            <div class="box" id="recipe">
+                <div class="recipe-img"></div>
+                <div class="recipe-content">
+                    <div class="recipe-title">
+                        <h2>Limonade de coco</h2>
+                        <div class="timer">
+                            <span class="timer-icon"><i class="far fa-clock"></i></span>
+                            <p>10min</p>
+                        </div>
+                    </div>
+                    <div class="recipe-component">
+                        <ul class="ingredients">
+                            <li>Lait de coco: 400ml</li>
+                            <li>Jus de citron: 2</li>
+                            <li>Creme de coco: 4 cuillères</li>
+                            <li>Sucre: 20g</li>
+                            <li>Glaçons: 2</li>
+                        </ul>
+                        <div class="recipe-instruction">
+                            <p>Mettre les glaçons à votre goût dans le blender, ajouter le lait, la crème de coco, le jus de
+                                2
+                                citrons et le sucre. Mixer jusqu'à avoir la consistance désirée</p>
+                        </div>
                     </div>
                 </div>
-                <div class="recipe-component">
-                    <ul class="ingredients">
-                        <li>Lait de coco: 400ml</li>
-                        <li>Jus de citron: 2</li>
-                        <li>Creme de coco: 4 cuillères</li>
-                        <li>Sucre: 20g</li>
-                        <li>Glaçons: 2</li>
-                    </ul>
-                    <div class="recipe-instruction">
-                        <p>Mettre les glaçons à votre goût dans le blender, ajouter le lait, la crème de coco, le jus de
-                            2
-                            citrons et le sucre. Mixer jusqu'à avoir la consistance désirée</p>
-                    </div>
-                </div>
-
             </div>
         </div>
-
+        
     </section>
     <footer>
     </footer>
-    <script type='module' src="javascript/main.js"></script>
-
+    <script src="javascript/recipes.js"></script>
+    <script src="javascript/class.js"></script>
+    <script src="javascript/functions.js"></script>
+    <script src="javascript/main.js"></script> 
+    
+       
 </body>
 </html>

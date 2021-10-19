@@ -19,7 +19,6 @@ header img{
     height: auto;
 }
 
-
 /*research bar*/
 
 .research {
@@ -44,7 +43,9 @@ header img{
     font-size: 1.5em;
     cursor: pointer;
 }
+
 /*tag-area*/
+
 #tag-bar{
     max-width: 1200px;
     width: auto;
@@ -59,9 +60,10 @@ header img{
     border-radius: 5px;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
     background-color: #3282F7;
-
+    color: white;
+    
 }
 .tagbox-appliance{
     width: 107px;
@@ -69,8 +71,10 @@ header img{
     border-radius: 5px;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
     background-color: #68D9A4;
+    color: white;
+    cursor: pointer;
 }
 .tagbox-ustensils{
     width: 107px;
@@ -78,10 +82,14 @@ header img{
     border-radius: 5px;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
     background-color: #ED6454;
+    color: white;
+    cursor: pointer;
 }
-
+.fa-times-circle{
+    cursor: pointer;
+}
 
 /*Filters area*/
 
@@ -141,7 +149,8 @@ header img{
 }
 #list-ingredient {
     width: 500px;
-    height: 400px;
+    height: auto;
+    max-height: 400px;
     color: white;
     background-color: #3282F7;
     position: absolute;
@@ -154,18 +163,20 @@ header img{
 }
 .listing-element{
     margin: 5px 0 5px 15px;
+    cursor: pointer;
 }
-.appareil{
+.appliance{
     background-color:#68D9A4;
     position: relative;
 }
-.box-modified-appareil{
+.box-modified-appliance{
     width: 420px;
     border-radius: 5px 5px 0 0;
 }
-#list-appareil{
+#list-appliance{
     width: 420px;
-    height: 150px;
+    height : auto;
+    max-height: 220px;
     color: white;
     background-color: #68D9A4;
     position: absolute;
@@ -185,7 +196,8 @@ header img{
 }
 #list-ustensile{
     width: 420px;
-    height: 150px;
+    height: auto;
+    max-height: 265px;
     color: white;
     background-color: #ED6454;
     position: absolute;
@@ -198,11 +210,10 @@ header img{
 ::placeholder {
     color: white;
 }
-#ingredient-icon-down, #ingredient-icon-up, #appareil-icon-down, #appareil-icon-up, #ustensile-icon-down, #ustensile-icon-up{
+#ingredient-icon-down, #ingredient-icon-up, #appliance-icon-down, #appliance-icon-up, #ustensile-icon-down, #ustensile-icon-up{
     cursor: pointer;
     color: white;
 }
-
 
 /*recipes*/
 
@@ -212,13 +223,18 @@ header img{
     margin :auto;
     margin-top: 2em;
 }
-.recipe-box{
-    width: 380px;
-    height: 364px;
+.box{
+    max-width: 1200px;
+    height: auto;
     border-radius: 5px;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+}
+.recipe-card{
+    width: 375px;
+    height: 400px;
+    padding: 10px;
 }
 .recipe-img{
     width: 100%;
@@ -271,6 +287,5 @@ ul{
     display: flex;
     flex-wrap: wrap;
     width: 50%;
-    
+    overflow: scroll;
 }
-
