@@ -7,6 +7,7 @@ class Recipe {
         this.appliances = []
         this.ustensils = []
         this.hasFilters = 0
+        this.hasInput = false
     }
 
     addIngredient(ingredient){
